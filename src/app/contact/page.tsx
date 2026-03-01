@@ -12,7 +12,7 @@ export default function Contact() {
               <span className="text-forest italic">Real response.</span>
             </h1>
             <p className="text-stone-600 leading-relaxed font-body mb-10">
-              Have a question that didn't fit the form? Want to connect about something else entirely? Reach out however works best for you.
+              {"Have a question that didn't fit the form? Want to connect about something else entirely? Reach out however works best for you."}
             </p>
 
             <div className="space-y-6">
@@ -53,6 +53,9 @@ export default function Contact() {
                 <div>
                   <p className="text-xs uppercase tracking-widest text-stone-400 mb-2">Follow Along</p>
                   <div className="space-y-2">
+                    <a href="https://www.instagram.com/everett.valdez" target="_blank" rel="noopener noreferrer" className="block text-stone-700 font-body hover:text-forest transition-colors text-sm">
+                      Instagram — @everett.valdez
+                    </a>
                     <a href="https://www.facebook.com/everett.valdez" target="_blank" rel="noopener noreferrer" className="block text-stone-700 font-body hover:text-forest transition-colors text-sm">
                       Facebook — Everett Valdez
                     </a>
@@ -73,7 +76,7 @@ export default function Contact() {
               Ready for a real conversation?
             </h2>
             <p className="text-stone-500 font-body text-sm mb-6">
-              The Work With Me page is the best place to start if you want to talk through options.
+              {"The Work With Me page is the best place to start if you want to talk through options."}
             </p>
             <Link
               href="/work-with-me"
@@ -81,7 +84,6 @@ export default function Contact() {
             >
               Start the Conversation →
             </Link>
-
             <div className="mt-8 pt-8 border-t border-warm-sand">
               <p className="text-xs text-stone-400 font-body leading-relaxed">
                 Response time: Usually within 24 hours. I personally read and respond to every message.

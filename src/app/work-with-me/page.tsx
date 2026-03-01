@@ -15,8 +15,8 @@ export default function WorkWithMe() {
     const form = e.currentTarget
     const data = new FormData(form)
 
-    // Replace YOUR_FORMSPREE_ID with your actual Formspree form ID
-    const res = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
+    // Replace mgolbqea with your actual Formspree form ID
+    const res = await fetch('https://formspree.io/f/mgolbqea', {
       method: 'POST',
       body: data,
       headers: { Accept: 'application/json' },

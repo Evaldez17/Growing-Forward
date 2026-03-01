@@ -41,6 +41,9 @@ export default function Footer() {
             <a href="tel:3033355365" className="block text-stone-400 hover:text-warm-amber transition-colors">
               (303) 335-5365
             </a>
+            <a href="https://www.instagram.com/everett.valdez" target="_blank" rel="noopener noreferrer" className="block text-stone-400 hover:text-warm-amber transition-colors">
+              Instagram
+            </a>
             <a href="https://www.facebook.com/everett.valdez" target="_blank" rel="noopener noreferrer" className="block text-stone-400 hover:text-warm-amber transition-colors">
               Facebook
             </a>
