@@ -34,15 +34,23 @@ export default function Footer() {
 
         <div>
           <p className="text-xs uppercase tracking-widest text-stone-500 mb-4">Connect</p>
-          <p className="text-sm text-stone-400 leading-relaxed">
-            No pressure. No pitch. Just a conversation when you're ready.
-          </p>
-          <Link
-            href="/work-with-me"
-            className="inline-block mt-4 text-sm bg-warm-amber/20 text-warm-amber border border-warm-amber/30 px-5 py-2.5 rounded-full hover:bg-warm-amber/30 transition-colors duration-200"
-          >
-            Talk it through →
-          </Link>
+          <div className="space-y-2 text-sm">
+            <a href="mailto:growingforwardco@gmail.com" className="block text-stone-400 hover:text-warm-amber transition-colors">
+              growingforwardco@gmail.com
+            </a>
+            <a href="tel:3033355365" className="block text-stone-400 hover:text-warm-amber transition-colors">
+              (303) 335-5365
+            </a>
+            <a href="https://www.facebook.com/everett.valdez" target="_blank" rel="noopener noreferrer" className="block text-stone-400 hover:text-warm-amber transition-colors">
+              Facebook
+            </a>
+            <a href="https://www.tiktok.com/@everett.valdez" target="_blank" rel="noopener noreferrer" className="block text-stone-400 hover:text-warm-amber transition-colors">
+              TikTok
+            </a>
+            <a href="https://www.youtube.com/@everettavaldez" target="_blank" rel="noopener noreferrer" className="block text-stone-400 hover:text-warm-amber transition-colors">
+              YouTube
+            </a>
+          </div>
         </div>
       </div>
 

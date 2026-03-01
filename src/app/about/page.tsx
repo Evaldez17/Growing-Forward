@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function About() {
   return (
@@ -8,13 +9,16 @@ export default function About() {
       <section className="py-24 max-w-5xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-start">
 
-          {/* Photo placeholder */}
+          {/* Photo */}
           <div>
-            <div className="w-full aspect-[4/5] bg-warm-sand rounded-2xl flex items-center justify-center">
-              <p className="text-stone-400 text-sm text-center px-8">
-                Your photo goes here.<br />
-                <span className="text-xs">(Add a headshot when ready)</span>
-              </p>
+            <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden relative">
+              <Image
+                src="/Me.jpg"
+                alt="Everett Valdez"
+                fill
+                className="object-cover object-top"
+                priority
+              />
             </div>
           </div>
 
@@ -52,10 +56,10 @@ export default function About() {
             The Season I'm In Now
           </h2>
           <div className="space-y-5 text-stone-600 font-body leading-relaxed text-lg">
-            <p>This opportunity found me during a season where responsibility was already heavy on my mind. After looking at it closely, I chose to step into it intentionally.</p>
-            <p>Right now, one of the primary ways I help people move forward responsibly is through financial protection.</p>
-            <p>I'm licensed by the state of Colorado as a life insurance agent, and I operate through Primerica's platform and product structure. Primerica provided the training and pathway that helped me get licensed. The license itself is issued by the state.</p>
-            <p>I'm building this chapter in real time, and I take that responsibility seriously.</p>
+            <p>{"This opportunity found me during a season where responsibility was already heavy on my mind. After looking at it closely, I chose to step into it intentionally."}</p>
+            <p>{"Right now, one of the primary ways I help people move forward responsibly is through financial protection."}</p>
+            <p>{"I'm licensed by the state of Colorado as a life insurance agent, and I operate through Primerica's platform and product structure. Primerica provided the training and pathway that helped me get licensed. The license itself is issued by the state."}</p>
+            <p>{"I'm building this chapter in real time, and I take that responsibility seriously."}</p>
           </div>
 
           <div className="mt-10 space-y-2 font-display text-lg font-bold text-stone-700">
@@ -65,8 +69,8 @@ export default function About() {
           </div>
 
           <div className="mt-8 space-y-3 text-stone-600 font-body leading-relaxed text-lg">
-            <p>If something makes sense, I'll help you move confidently.</p>
-            <p>If it doesn't, we don't force it.</p>
+            <p>{"If something makes sense, I'll help you move confidently."}</p>
+            <p>{"If it doesn't, we don't force it."}</p>
           </div>
         </div>
       </section>
@@ -78,8 +82,8 @@ export default function About() {
             What Growing Forward Means
           </h2>
           <div className="space-y-4 text-stone-400 font-body leading-relaxed text-lg">
-            <p>Growth isn't just mindset.</p>
-            <p>It's strengthening your mind, building something meaningful, and taking responsibility for the people who trust you.</p>
+            <p>{"Growth isn't just mindset."}</p>
+            <p>{"It's strengthening your mind, building something meaningful, and taking responsibility for the people who trust you."}</p>
             <p>Financial protection is one tool in that process.</p>
             <p>Not the identity. Not the mission. Just a tool.</p>
           </div>
@@ -108,7 +112,7 @@ export default function About() {
 
           <div className="border-t border-warm-sand pt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <p className="text-stone-400 font-body italic">
-              Different seasons. Different reasons. But always — keep growing forward.
+              {"Different seasons. Different reasons. But always — keep growing forward."}
             </p>
             <Link
               href="/work-with-me"

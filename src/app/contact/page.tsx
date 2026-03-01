@@ -24,8 +24,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-widest text-stone-400 mb-1">Email</p>
-                  <p className="text-stone-700 font-body">your@email.com</p>
-                  <p className="text-xs text-stone-400 mt-1">Add your real email here</p>
+                  <a href="mailto:growingforwardco@gmail.com" className="text-stone-700 font-body hover:text-forest transition-colors">
+                    growingforwardco@gmail.com
+                  </a>
                 </div>
               </div>
 
@@ -37,8 +38,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-widest text-stone-400 mb-1">Phone / Text</p>
-                  <p className="text-stone-700 font-body">(555) 000-0000</p>
-                  <p className="text-xs text-stone-400 mt-1">Add your real number here</p>
+                  <a href="tel:3033355365" className="text-stone-700 font-body hover:text-forest transition-colors">
+                    (303) 335-5365
+                  </a>
                 </div>
               </div>
 
@@ -49,9 +51,18 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-stone-400 mb-1">Social Media</p>
-                  <p className="text-stone-700 font-body">@YourHandle</p>
-                  <p className="text-xs text-stone-400 mt-1">Add your social links here</p>
+                  <p className="text-xs uppercase tracking-widest text-stone-400 mb-2">Follow Along</p>
+                  <div className="space-y-2">
+                    <a href="https://www.facebook.com/everett.valdez" target="_blank" rel="noopener noreferrer" className="block text-stone-700 font-body hover:text-forest transition-colors text-sm">
+                      Facebook — Everett Valdez
+                    </a>
+                    <a href="https://www.tiktok.com/@everett.valdez" target="_blank" rel="noopener noreferrer" className="block text-stone-700 font-body hover:text-forest transition-colors text-sm">
+                      TikTok — @everett.valdez
+                    </a>
+                    <a href="https://www.youtube.com/@everettavaldez" target="_blank" rel="noopener noreferrer" className="block text-stone-700 font-body hover:text-forest transition-colors text-sm">
+                      YouTube — @everettavaldez
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -68,7 +79,7 @@ export default function Contact() {
               href="/work-with-me"
               className="inline-block w-full text-center bg-forest text-warm-cream px-7 py-4 rounded-full font-medium hover:bg-forest-dark transition-colors"
             >
-              Talk it through →
+              Start the Conversation →
             </Link>
 
             <div className="mt-8 pt-8 border-t border-warm-sand">
