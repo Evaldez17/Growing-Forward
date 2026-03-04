@@ -6,6 +6,7 @@ import Link from 'next/link'
 const links = [
   { href: '/about', label: 'About' },
   { href: '/faq', label: 'Learn' },
+  { href: '/resources', label: 'Resources' },
   { href: '/transparency', label: 'Transparency' },
   { href: '/contact', label: 'Contact' },
 ]

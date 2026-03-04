@@ -19,6 +19,7 @@ export default function Footer() {
             {[
               { href: '/about', label: 'About Everett' },
               { href: '/faq', label: 'Learn the Basics' },
+              { href: '/resources', label: 'Free Resources' },
               { href: '/transparency', label: 'Transparency' },
               { href: '/work-with-me', label: 'Work With Me' },
               { href: '/contact', label: 'Contact' },
