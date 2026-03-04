@@ -1,12 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 const resources = [
   {
     id: 'reset',
     title: 'The Growing Forward Reset',
-    description: 'Feeling overwhelmed or stuck? This simple 10-minute reset helps you clear your mind, identify what actually matters right now, and take one small step forward. It\'s a quick exercise designed to help you regain momentum when life feels chaotic.',
+    description: "Feeling overwhelmed or stuck? This simple 10-minute reset helps you clear your mind, identify what actually matters right now, and take one small step forward. It's a quick exercise designed to help you regain momentum when life feels chaotic.",
     tag: 'Mindset',
     file: '/growing-forward-reset.pdf',
     tagColor: 'bg-green-100 text-green-700',
@@ -14,7 +15,7 @@ const resources = [
   {
     id: 'fomu',
     title: 'FOMU – Fear Of Messing Up',
-    description: 'A lot of people talk about FOMO, but the fear that really holds people back is FOMU — the fear of messing up. This guide helps you reframe mistakes, shrink the first step, and start moving forward even when things feel uncertain.',
+    description: "A lot of people talk about FOMO, but the fear that really holds people back is FOMU — the fear of messing up. This guide helps you reframe mistakes, shrink the first step, and start moving forward even when things feel uncertain.",
     tag: 'Motivation',
     file: '/fomu-fear-of-messing-up.pdf',
     tagColor: 'bg-amber-100 text-amber-700',
@@ -22,7 +23,7 @@ const resources = [
   {
     id: 'insurance',
     title: '5 Things to Know Before You Get Life Insurance',
-    description: 'Life insurance doesn\'t have to be confusing or overwhelming. This short guide explains the basics in plain language so you can understand how protection works and make thoughtful decisions for the people you care about.',
+    description: "Life insurance doesn't have to be confusing or overwhelming. This short guide explains the basics in plain language so you can understand how protection works and make thoughtful decisions for the people you care about.",
     tag: 'Protection',
     file: '/5-things-life-insurance.pdf',
     tagColor: 'bg-stone-100 text-stone-600',
@@ -31,10 +32,10 @@ const resources = [
 
 function ResourceCard({ resource }: { resource: typeof resources[0] }) {
   const [open, setOpen] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const router = useRouter()
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -54,7 +55,12 @@ function ResourceCard({ resource }: { resource: typeof resources[0] }) {
     setLoading(false)
 
     if (res.ok) {
-      setSubmitted(true)
+      const params = new URLSearchParams({
+        file: resource.file,
+        name: name,
+        title: resource.title,
+      })
+      router.push(`/download-confirm?${params.toString()}`)
     } else {
       alert('Something went wrong. Please try again.')
     }
@@ -90,7 +96,7 @@ function ResourceCard({ resource }: { resource: typeof resources[0] }) {
         </button>
       )}
 
-      {open && !submitted && (
+      {open && (
         <form onSubmit={handleSubmit} className="space-y-4 mt-auto">
           <p className="text-xs text-stone-500 font-body">
             We respect your inbox. No spam. Just helpful ideas and resources.
@@ -127,26 +133,6 @@ function ResourceCard({ resource }: { resource: typeof resources[0] }) {
           </button>
         </form>
       )}
-
-      {submitted && (
-        <div className="mt-auto text-center space-y-4">
-          <div className="w-12 h-12 rounded-full bg-forest/10 flex items-center justify-center mx-auto">
-            <svg className="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <p className="text-stone-700 font-body text-sm font-medium">
-            {"You're all set!"}
-          </p>
-          <a
-            href={resource.file}
-            download
-            className="inline-block w-full text-center bg-forest text-warm-cream py-3.5 rounded-full font-medium hover:bg-forest-dark transition-colors duration-200 text-sm"
-          >
-            Download Now ↓
-          </a>
-        </div>
-      )}
     </div>
   )
 }
@@ -178,7 +164,9 @@ export default function Resources() {
         {/* Closing line */}
         <div className="mt-12 text-center">
           <p className="font-display text-xl font-bold text-stone-800 mb-2">Not sure where to start?</p>
-          <p className="text-stone-500 font-body max-w-xl mx-auto leading-relaxed">Start with whichever guide resonates most with you right now. Growth does not require perfection — it just requires movement.</p>
+          <p className="text-stone-500 font-body max-w-xl mx-auto leading-relaxed">
+            Start with whichever guide resonates most with you right now. Growth does not require perfection — it just requires movement.
+          </p>
           <p className="text-forest font-display font-bold italic mt-3">Always be growing forward. 💪</p>
         </div>
 
