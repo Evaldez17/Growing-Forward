@@ -8,6 +8,7 @@ const links = [
   { href: '/faq', label: 'Learn' },
   { href: '/resources', label: 'Resources' },
   { href: '/quiz', label: 'Take the Quiz' },
+  { href: '/snapshot', label: 'Financial Snapshot' },
   { href: '/transparency', label: 'Transparency' },
   { href: '/contact', label: 'Contact' },
 ]
