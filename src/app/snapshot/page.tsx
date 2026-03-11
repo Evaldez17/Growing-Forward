@@ -198,7 +198,7 @@ export default function Snapshot() {
   if (step === 0) return (
     <div className="pt-20">
       <section className="py-24 max-w-xl mx-auto px-6 text-center">
-        <p className="text-xs uppercase tracking-[0.2em] text-forest mb-4">Phase 2 Tool</p>
+        
         <h1 className="font-display text-5xl font-bold text-stone-800 leading-tight mb-6">
           Financial Snapshot<br /><span className="text-forest italic">Checkup</span>
         </h1>
