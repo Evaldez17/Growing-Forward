@@ -5,6 +5,14 @@ import { useRouter } from 'next/navigation'
 
 const resources = [
   {
+    id: '90day',
+    title: 'The 90-Day Financial Clarity Reset',
+    description: "A practical 12-page guide to going from financial chaos to control in 90 days. Four phases, real systems, and a step-by-step approach that actually works — written in plain language for real life.",
+    tag: 'Deep Dive',
+    file: '/90-day-financial-clarity-reset.pdf',
+    tagColor: 'bg-purple-100 text-purple-700',
+  },
+  {
     id: 'reset',
     title: 'The Growing Forward Reset',
     description: "Feeling overwhelmed or stuck? This simple 10-minute reset helps you clear your mind, identify what actually matters right now, and take one small step forward. It's a quick exercise designed to help you regain momentum when life feels chaotic.",
@@ -68,7 +76,6 @@ function ResourceCard({ resource }: { resource: typeof resources[0] }) {
 
   return (
     <div className="bg-warm-cream border border-warm-sand rounded-2xl p-8 flex flex-col gap-6">
-      {/* Tag */}
       <div className="flex items-center justify-between">
         <span className={`text-xs font-medium px-3 py-1 rounded-full font-body ${resource.tagColor}`}>
           {resource.tag}
@@ -76,7 +83,6 @@ function ResourceCard({ resource }: { resource: typeof resources[0] }) {
         <span className="text-xs text-stone-400 font-body uppercase tracking-widest">Free Guide</span>
       </div>
 
-      {/* Content */}
       <div>
         <h2 className="font-display text-2xl font-bold text-stone-800 mb-3 leading-tight">
           {resource.title}
@@ -86,7 +92,6 @@ function ResourceCard({ resource }: { resource: typeof resources[0] }) {
         </p>
       </div>
 
-      {/* CTA / Form */}
       {!open && (
         <button
           onClick={() => setOpen(true)}
@@ -142,7 +147,6 @@ export default function Resources() {
     <div className="pt-20">
       <section className="py-24 max-w-6xl mx-auto px-6">
 
-        {/* Header */}
         <div className="mb-16 max-w-2xl">
           <p className="text-xs uppercase tracking-[0.2em] text-forest mb-4">Free Resources</p>
           <h1 className="font-display text-5xl font-bold text-stone-800 leading-tight mb-6">
@@ -154,14 +158,12 @@ export default function Resources() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {resources.map(resource => (
             <ResourceCard key={resource.id} resource={resource} />
           ))}
         </div>
 
-        {/* Closing line */}
         <div className="mt-12 text-center">
           <p className="font-display text-xl font-bold text-stone-800 mb-2">Not sure where to start?</p>
           <p className="text-stone-500 font-body max-w-xl mx-auto leading-relaxed">
@@ -170,7 +172,6 @@ export default function Resources() {
           <p className="text-forest font-display font-bold italic mt-3">Always be growing forward. 💪</p>
         </div>
 
-        {/* Bottom CTA */}
         <div className="mt-20 bg-stone-800 text-warm-cream rounded-2xl p-10 text-center">
           <h2 className="font-display text-2xl font-bold mb-3">
             Want to talk through what you learned?
