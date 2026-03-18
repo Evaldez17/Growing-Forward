@@ -1,5 +1,5 @@
 'use client'
-
+import FeedbackSection from '@/components/FeedbackSection'
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
 
@@ -453,6 +453,7 @@ export default function Snapshot() {
             Start over
           </button>
         </div>
+        <FeedbackSection source="snapshot" />
 
       </section>
     </div>

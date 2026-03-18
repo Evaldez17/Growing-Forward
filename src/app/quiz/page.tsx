@@ -1,5 +1,5 @@
 'use client'
-
+import FeedbackSection from '@/components/FeedbackSection'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -343,6 +343,7 @@ export default function Quiz() {
         <p className="text-center text-xs text-stone-400 font-body mt-4 italic">
           There are no wrong answers. Be honest — the results are for you.
         </p>
+        <FeedbackSection source="quiz" />
 
       </section>
     </div>
