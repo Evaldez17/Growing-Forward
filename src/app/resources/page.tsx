@@ -5,6 +5,14 @@ import { useRouter } from 'next/navigation'
 
 const resources = [
   {
+    id: 'budget',
+    title: 'Monthly Budget Spreadsheet',
+    description: "A simple spreadsheet to track your income, expenses, and cash flow each month. If you feel like your money disappears and you're not sure where it goes — this is your starting point.",
+    tag: 'Tool',
+    file: '/growing-forward-monthly-budget.xlsx',
+    tagColor: 'bg-blue-100 text-blue-700',
+  },
+  {
     id: '90day',
     title: 'The 90-Day Financial Clarity Reset',
     description: "A practical 12-page guide to going from financial chaos to control in 90 days. Four phases, real systems, and a step-by-step approach that actually works — written in plain language for real life.",
@@ -80,7 +88,7 @@ function ResourceCard({ resource }: { resource: typeof resources[0] }) {
         <span className={`text-xs font-medium px-3 py-1 rounded-full font-body ${resource.tagColor}`}>
           {resource.tag}
         </span>
-        <span className="text-xs text-stone-400 font-body uppercase tracking-widest">Free Guide</span>
+        <span className="text-xs text-stone-400 font-body uppercase tracking-widest">Free</span>
       </div>
 
       <div>
@@ -97,7 +105,7 @@ function ResourceCard({ resource }: { resource: typeof resources[0] }) {
           onClick={() => setOpen(true)}
           className="mt-auto w-full bg-forest text-warm-cream py-3.5 rounded-full font-medium hover:bg-forest-dark transition-colors duration-200 text-sm"
         >
-          Get the Guide →
+          Get It Free →
         </button>
       )}
 
@@ -127,7 +135,7 @@ function ResourceCard({ resource }: { resource: typeof resources[0] }) {
             disabled={loading}
             className="w-full bg-forest text-warm-cream py-3.5 rounded-full font-medium hover:bg-forest-dark transition-colors duration-200 text-sm disabled:opacity-60"
           >
-            {loading ? 'Sending...' : 'Send Me the Guide'}
+            {loading ? 'Sending...' : 'Send It To Me'}
           </button>
           <button
             type="button"
@@ -154,11 +162,11 @@ export default function Resources() {
             <span className="text-forest italic">Move Forward</span>
           </h1>
           <p className="text-stone-600 font-body text-lg leading-relaxed">
-            Sometimes all it takes is a little clarity and one small step. These free guides are designed to help you reset your mindset, take action, and protect what matters most.
+            Sometimes all it takes is a little clarity and one small step. These free resources are designed to help you reset your mindset, take action, and protect what matters most.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resources.map(resource => (
             <ResourceCard key={resource.id} resource={resource} />
           ))}
@@ -167,7 +175,7 @@ export default function Resources() {
         <div className="mt-12 text-center">
           <p className="font-display text-xl font-bold text-stone-800 mb-2">Not sure where to start?</p>
           <p className="text-stone-500 font-body max-w-xl mx-auto leading-relaxed">
-            Start with whichever guide resonates most with you right now. Growth does not require perfection — it just requires movement.
+            Start with whichever resource resonates most with you right now. Growth does not require perfection — it just requires movement.
           </p>
           <p className="text-forest font-display font-bold italic mt-3">Always be growing forward. 💪</p>
         </div>
@@ -177,7 +185,7 @@ export default function Resources() {
             Want to talk through what you learned?
           </h2>
           <p className="text-stone-400 font-body mb-6">
-            {"These guides are a starting point. A real conversation is where things actually move."}
+            {"These resources are a starting point. A real conversation is where things actually move."}
           </p>
           <a
             href="/work-with-me"
