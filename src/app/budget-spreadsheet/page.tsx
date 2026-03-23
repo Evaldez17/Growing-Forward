@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function BudgetSpreadsheet() {
   const [open, setOpen] = useState(false)
@@ -44,25 +45,43 @@ export default function BudgetSpreadsheet() {
     <div className="pt-20">
 
       {/* ── HERO ── */}
-      <section className="py-24 max-w-4xl mx-auto px-6">
-        <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-forest mb-4 font-body">Free Resource</p>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-stone-800 leading-tight mb-6">
-            Monthly Budget<br />
-            <span className="text-forest italic">Spreadsheet</span>
-          </h1>
-          <p className="text-stone-600 font-body text-xl leading-relaxed mb-8">
-            A simple way to track your income, expenses, and financial progress each month.
-          </p>
-          <button
-            onClick={() => {
-              setOpen(true)
-              setTimeout(() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' }), 100)
-            }}
-            className="bg-forest text-warm-cream px-8 py-4 rounded-full font-medium hover:bg-forest-dark transition-colors duration-200 text-sm"
-          >
-            Get the Spreadsheet →
-          </button>
+      <section className="py-24 max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-forest mb-4 font-body">Free Resource</p>
+            <h1 className="font-display text-5xl md:text-6xl font-bold text-stone-800 leading-tight mb-6">
+              Monthly Budget<br />
+              <span className="text-forest italic">Spreadsheet</span>
+            </h1>
+            <p className="text-stone-600 font-body text-xl leading-relaxed mb-8">
+              A simple way to track your income, expenses, and financial progress each month.
+            </p>
+            <button
+              onClick={() => {
+                setOpen(true)
+                setTimeout(() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' }), 100)
+              }}
+              className="bg-forest text-warm-cream px-8 py-4 rounded-full font-medium hover:bg-forest-dark transition-colors duration-200"
+            >
+              Get the Spreadsheet →
+            </button>
+            <p className="text-xs text-stone-400 font-body mt-3 italic">Free. No credit card. Just your email.</p>
+          </div>
+          <div className="relative">
+            <div className="rounded-2xl overflow-hidden shadow-2xl shadow-stone-200 border border-warm-sand">
+              <Image
+                src="/budget-start-here.png"
+                alt="Monthly Budget Spreadsheet Start Here tab"
+                width={700}
+                height={600}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
+            <div className="absolute -bottom-4 -right-4 bg-forest text-warm-cream px-4 py-2 rounded-full text-xs font-body font-medium shadow-lg">
+              Free Template ✓
+            </div>
+          </div>
         </div>
       </section>
 
@@ -84,15 +103,14 @@ export default function BudgetSpreadsheet() {
       </section>
 
       {/* ── WHAT IT HELPS YOU DO ── */}
-      <section className="py-20 max-w-4xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16">
-
+      <section className="py-20 max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-forest mb-4 font-body">What This Helps You Do</p>
             <h2 className="font-display text-3xl font-bold text-stone-800 mb-8">
               One place for your full financial picture.
             </h2>
-            <ul className="space-y-3">
+            <ul className="space-y-3 mb-10">
               {[
                 'Track monthly income',
                 'Track monthly expenses',
@@ -112,13 +130,7 @@ export default function BudgetSpreadsheet() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
             <p className="text-xs uppercase tracking-[0.2em] text-forest mb-4 font-body">Who This Is For</p>
-            <h2 className="font-display text-3xl font-bold text-stone-800 mb-8">
-              {"If any of this sounds like you — this is for you."}
-            </h2>
             <ul className="space-y-3">
               {[
                 'People who want to start budgeting',
@@ -137,36 +149,59 @@ export default function BudgetSpreadsheet() {
             </ul>
           </div>
 
+          <div className="rounded-2xl overflow-hidden shadow-xl shadow-stone-200 border border-warm-sand">
+            <Image
+              src="/budget-tracker.png"
+              alt="Monthly Budget Tracker expense breakdown"
+              width={700}
+              height={800}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       </section>
 
       {/* ── HOW TO USE IT ── */}
       <section className="py-20 bg-stone-800 text-warm-cream">
-        <div className="max-w-3xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-[0.2em] text-stone-400 mb-4 font-body">How To Use It</p>
-          <h2 className="font-display text-3xl font-bold mb-12">Five steps. That{"'"}s it.</h2>
-          <div className="space-y-6">
-            {[
-              ['Enter your monthly income', 'Start with what comes in every month — all income sources combined.'],
-              ['Enter your monthly expenses', 'List everything going out — fixed bills, variable spending, subscriptions.'],
-              ['Review your total spending', 'See the full picture of where your money is actually going.'],
-              ['See your monthly cash flow', 'Understand what{"\'"}s left after expenses — your surplus or deficit.'],
-              ['Adjust and improve each month', 'Use what you learn to make small improvements over time.'],
-            ].map(([title, body], i) => (
-              <div key={i} className="flex gap-6 items-start">
-                <div className="w-10 h-10 rounded-full bg-forest flex items-center justify-center flex-shrink-0 font-display font-bold text-warm-cream text-sm">
-                  {i + 1}
-                </div>
-                <div>
-                  <p className="font-display font-bold text-warm-cream mb-1">{title}</p>
-                  <p className="text-stone-400 font-body text-sm leading-relaxed">{body}</p>
-                </div>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-stone-400 mb-4 font-body">How To Use It</p>
+              <h2 className="font-display text-3xl font-bold mb-10">Five steps. {"That's"} it.</h2>
+              <div className="space-y-6">
+                {[
+                  ['Enter your monthly income', 'Start with what comes in every month — all income sources combined.'],
+                  ['Enter your monthly expenses', 'List everything going out — fixed bills, variable spending, subscriptions.'],
+                  ['Review your total spending', 'See the full picture of where your money is actually going.'],
+                  ['See your monthly cash flow', "Understand what's left after expenses — your surplus or deficit."],
+                  ['Adjust and improve each month', 'Use what you learn to make small improvements over time.'],
+                ].map(([title, body], i) => (
+                  <div key={i} className="flex gap-5 items-start">
+                    <div className="w-9 h-9 rounded-full bg-forest flex items-center justify-center flex-shrink-0 font-display font-bold text-warm-cream text-sm">
+                      {i + 1}
+                    </div>
+                    <div>
+                      <p className="font-display font-bold text-warm-cream mb-1">{title}</p>
+                      <p className="text-stone-400 font-body text-sm leading-relaxed">{body}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+              <p className="mt-10 text-stone-400 font-body italic border-l-2 border-forest/40 pl-4">
+                {"The goal isn't to be perfect the first month. The goal is to improve over time."}
+              </p>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden shadow-xl shadow-black/30 border border-stone-700">
+              <Image
+                src="/budget-overview.png"
+                alt="Budget Overview pie chart breakdown"
+                width={700}
+                height={600}
+                className="w-full h-auto"
+              />
+            </div>
           </div>
-          <p className="mt-10 text-stone-400 font-body italic border-l-2 border-forest/40 pl-4">
-            {"The goal isn't to be perfect the first month. The goal is to improve over time."}
-          </p>
         </div>
       </section>
 
@@ -271,10 +306,7 @@ export default function BudgetSpreadsheet() {
                   <h3 className="font-display text-lg font-bold text-stone-800 mb-2">{tool.title}</h3>
                   <p className="text-stone-500 font-body text-sm leading-relaxed">{tool.desc}</p>
                 </div>
-                <Link
-                  href={tool.href}
-                  className="mt-auto text-forest font-body text-sm font-medium hover:underline"
-                >
+                <Link href={tool.href} className="mt-auto text-forest font-body text-sm font-medium hover:underline">
                   {tool.label}
                 </Link>
               </div>
