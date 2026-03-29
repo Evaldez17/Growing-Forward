@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 
 const links = [
   { href: '/about', label: 'About' },
-  { href: '/faq', label: 'Learn' },
+  { href: '/learn', label: 'Learn' },
   { href: '/resources', label: 'Resources' },
   { href: '/budget-spreadsheet', label: 'Budget Tool' },
   { href: '/quiz', label: 'Take the Quiz' },
@@ -33,7 +33,7 @@ export default function Navbar() {
               key={l.href}
               href={l.href}
               className={`font-body text-sm transition-colors duration-200 ${
-                pathname === l.href
+                pathname === l.href || pathname.startsWith(l.href + '/')
                   ? 'text-forest font-medium'
                   : 'text-stone-500 hover:text-stone-800'
               }`}
@@ -76,7 +76,9 @@ export default function Navbar() {
               href={l.href}
               onClick={() => setOpen(false)}
               className={`block font-body text-sm py-2 transition-colors ${
-                pathname === l.href ? 'text-forest font-medium' : 'text-stone-600 hover:text-stone-800'
+                pathname === l.href || pathname.startsWith(l.href + '/')
+                  ? 'text-forest font-medium'
+                  : 'text-stone-600 hover:text-stone-800'
               }`}
             >
               {l.label}
