@@ -12,7 +12,7 @@ const sections = [
     topics: [
       { title: 'Building Your Financial Foundation', href: '/learn/financial-foundation', ready: true },
       { title: 'How Money Works', href: '/learn/how-money-works', ready: false },
-      { title: 'The Cost of Waiting', href: '/learn/cost-of-waiting', ready: false },
+      { title: 'The Cost of Waiting', href: '/learn/cost-of-waiting', ready: true },
       { title: 'Rule of 72', href: '/learn/rule-of-72', ready: false },
       { title: 'Compound Interest', href: '/learn/compound-interest', ready: false },
       { title: 'Inflation', href: '/learn/inflation', ready: false },
@@ -27,8 +27,8 @@ const sections = [
     labelColor: 'text-amber-600',
     dotColor: 'bg-amber-500',
     topics: [
-      { title: 'Why Life Insurance Exists', href: '/learn/why-life-insurance', ready: false },
-      { title: 'Term vs Whole Life', href: '/learn/term-vs-whole-life', ready: false },
+      { title: 'Why Life Insurance Exists', href: '/learn/why-life-insurance', ready: true },
+      { title: 'Term vs Whole Life', href: '/learn/term-vs-whole-life', ready: true },
       { title: 'How Much Coverage Do I Need', href: '/learn/how-much-coverage', ready: false },
       { title: 'Income Protection', href: '/learn/income-protection', ready: false },
     ],
@@ -42,8 +42,8 @@ const sections = [
     labelColor: 'text-blue-600',
     dotColor: 'bg-blue-500',
     topics: [
-      { title: 'Emergency Fund', href: '/learn/emergency-fund', ready: false },
-      { title: 'Budgeting Basics', href: '/learn/budgeting-basics', ready: false },
+      { title: 'Emergency Fund', href: '/learn/emergency-fund', ready: true },
+      { title: 'Budgeting Basics', href: '/learn/budgeting-basics', ready: true },
       { title: 'Debt Payoff Strategies', href: '/learn/debt-payoff-strategies', ready: false },
       { title: 'Paying Yourself First', href: '/learn/paying-yourself-first', ready: false },
     ],
@@ -57,8 +57,8 @@ const sections = [
     labelColor: 'text-purple-600',
     dotColor: 'bg-purple-500',
     topics: [
-      { title: 'Investing Basics', href: '/learn/investing-basics', ready: false },
-      { title: 'Retirement Accounts', href: '/learn/retirement-accounts', ready: false },
+      { title: 'Investing Basics', href: '/learn/investing-basics', ready: true },
+      { title: 'Retirement Basics', href: '/learn/retirement-basics', ready: true },
       { title: 'Financial Independence', href: '/learn/financial-independence', ready: false },
       { title: 'The Power of Time in the Market', href: '/learn/power-of-time', ready: false },
     ],
@@ -68,8 +68,6 @@ const sections = [
 export default function Learn() {
   return (
     <div className="pt-20">
-
-      {/* ── HEADER ── */}
       <section className="py-24 max-w-4xl mx-auto px-6">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.2em] text-forest mb-4 font-body">Financial Education</p>
@@ -86,7 +84,6 @@ export default function Learn() {
         </div>
       </section>
 
-      {/* ── PATH OVERVIEW ── */}
       <section className="pb-8 max-w-4xl mx-auto px-6">
         <div className="flex flex-wrap items-center gap-3 mb-16">
           {sections.map((s, i) => (
@@ -95,14 +92,11 @@ export default function Learn() {
                 <span className={`w-2 h-2 rounded-full ${s.dotColor}`} />
                 <span className={`text-xs font-medium font-body ${s.labelColor}`}>{s.label}</span>
               </div>
-              {i < sections.length - 1 && (
-                <span className="text-stone-300 font-body">→</span>
-              )}
+              {i < sections.length - 1 && <span className="text-stone-300 font-body">→</span>}
             </div>
           ))}
         </div>
 
-        {/* ── SECTIONS ── */}
         <div className="space-y-16">
           {sections.map((section, sIdx) => (
             <div key={section.id}>
@@ -116,23 +110,16 @@ export default function Learn() {
                   <p className="text-stone-500 font-body text-sm">{section.description}</p>
                 </div>
               </div>
-
               <div className="grid sm:grid-cols-2 gap-3 ml-12">
                 {section.topics.map(topic => (
                   topic.ready ? (
-                    <Link
-                      key={topic.title}
-                      href={topic.href}
-                      className={`group flex items-center justify-between px-5 py-4 rounded-xl border ${section.color} hover:shadow-md transition-all duration-200`}
-                    >
+                    <Link key={topic.title} href={topic.href}
+                      className={`group flex items-center justify-between px-5 py-4 rounded-xl border ${section.color} hover:shadow-md transition-all duration-200`}>
                       <span className="font-body text-sm text-stone-700 group-hover:text-stone-900 font-medium">{topic.title}</span>
                       <span className={`text-xs font-body ${section.labelColor} group-hover:translate-x-1 transition-transform`}>Read →</span>
                     </Link>
                   ) : (
-                    <div
-                      key={topic.title}
-                      className="flex items-center justify-between px-5 py-4 rounded-xl border border-warm-sand bg-warm-cream/50"
-                    >
+                    <div key={topic.title} className="flex items-center justify-between px-5 py-4 rounded-xl border border-warm-sand bg-warm-cream/50">
                       <span className="font-body text-sm text-stone-400">{topic.title}</span>
                       <span className="text-xs font-body text-stone-300 bg-stone-100 px-2 py-0.5 rounded-full">Coming soon</span>
                     </div>
@@ -144,18 +131,13 @@ export default function Learn() {
         </div>
       </section>
 
-      {/* ── BOTTOM CTA ── */}
       <section className="py-24 max-w-4xl mx-auto px-6">
         <div className="bg-stone-800 text-warm-cream rounded-2xl p-10">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <p className="text-xs uppercase tracking-widest text-stone-400 font-body mb-3">Ready to Apply What You Learn?</p>
-              <h2 className="font-display text-2xl font-bold mb-3">
-                Knowledge is the first step. Action is the next.
-              </h2>
-              <p className="text-stone-400 font-body text-sm leading-relaxed">
-                Use the tools below to apply what you're learning to your actual financial situation.
-              </p>
+              <h2 className="font-display text-2xl font-bold mb-3">Knowledge is the first step. Action is the next.</h2>
+              <p className="text-stone-400 font-body text-sm leading-relaxed">Use the tools below to apply what you're learning to your actual financial situation.</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {[
@@ -164,11 +146,8 @@ export default function Learn() {
                 { label: 'Budget Tool', href: '/budget-spreadsheet' },
                 { label: 'Talk it Through', href: '/work-with-me' },
               ].map(cta => (
-                <Link
-                  key={cta.label}
-                  href={cta.href}
-                  className="text-center bg-stone-700 hover:bg-forest text-warm-cream px-4 py-3 rounded-xl text-sm font-body font-medium transition-colors duration-200"
-                >
+                <Link key={cta.label} href={cta.href}
+                  className="text-center bg-stone-700 hover:bg-forest text-warm-cream px-4 py-3 rounded-xl text-sm font-body font-medium transition-colors duration-200">
                   {cta.label}
                 </Link>
               ))}
@@ -176,7 +155,6 @@ export default function Learn() {
           </div>
         </div>
       </section>
-
     </div>
   )
 }
