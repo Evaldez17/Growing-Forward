@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /thank-you
+Disallow: /download-confirm
 
 Sitemap: https://www.growingforwardco.com/sitemap.xml
