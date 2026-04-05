@@ -11,11 +11,11 @@ const sections = [
     dotColor: 'bg-forest',
     topics: [
       { title: 'Building Your Financial Foundation', href: '/learn/financial-foundation', ready: true },
-      { title: 'How Money Works', href: '/learn/how-money-works', ready: false },
+      { title: 'How Money Works', href: '/learn/how-money-works', ready: true },
       { title: 'The Cost of Waiting', href: '/learn/cost-of-waiting', ready: true },
       { title: 'Rule of 72', href: '/learn/rule-of-72', ready: false },
-      { title: 'Compound Interest', href: '/learn/compound-interest', ready: false },
-      { title: 'Inflation', href: '/learn/inflation', ready: false },
+      { title: 'Compound Interest', href: '/learn/compound-interest', ready: true },
+      { title: 'Inflation', href: '/learn/inflation', ready: true },
     ],
   },
   {
@@ -29,8 +29,8 @@ const sections = [
     topics: [
       { title: 'Why Life Insurance Exists', href: '/learn/why-life-insurance', ready: true },
       { title: 'Term vs Whole Life', href: '/learn/term-vs-whole-life', ready: true },
-      { title: 'How Much Coverage Do I Need', href: '/learn/how-much-coverage', ready: false },
-      { title: 'Income Protection', href: '/learn/income-protection', ready: false },
+      { title: 'How Much Coverage Do I Need', href: '/learn/how-much-coverage', ready: true },
+      { title: 'Income Protection', href: '/learn/income-protection', ready: true },
     ],
   },
   {
@@ -44,8 +44,8 @@ const sections = [
     topics: [
       { title: 'Emergency Fund', href: '/learn/emergency-fund', ready: true },
       { title: 'Budgeting Basics', href: '/learn/budgeting-basics', ready: true },
-      { title: 'Debt Payoff Strategies', href: '/learn/debt-payoff-strategies', ready: false },
-      { title: 'Paying Yourself First', href: '/learn/paying-yourself-first', ready: false },
+      { title: 'Debt Payoff Strategies', href: '/learn/debt-payoff-strategies', ready: true },
+      { title: 'Paying Yourself First', href: '/learn/paying-yourself-first', ready: true },
     ],
   },
   {
@@ -59,8 +59,8 @@ const sections = [
     topics: [
       { title: 'Investing Basics', href: '/learn/investing-basics', ready: true },
       { title: 'Retirement Basics', href: '/learn/retirement-basics', ready: true },
-      { title: 'Financial Independence', href: '/learn/financial-independence', ready: false },
-      { title: 'The Power of Time in the Market', href: '/learn/power-of-time', ready: false },
+      { title: 'Financial Independence', href: '/learn/financial-independence', ready: true },
+      { title: 'The Power of Time in the Market', href: '/learn/power-of-time', ready: true },
     ],
   },
 ]
