@@ -46,6 +46,7 @@ const sections = [
       { title: 'Budgeting Basics', href: '/learn/budgeting-basics', ready: true },
       { title: 'Debt Payoff Strategies', href: '/learn/debt-payoff-strategies', ready: true },
       { title: 'Paying Yourself First', href: '/learn/paying-yourself-first', ready: true },
+      { title: 'Balance Transfer Strategy', href: '/learn/balance-transfer-strategy', ready: true },
     ],
   },
   {
@@ -78,9 +79,7 @@ export default function Learn() {
           <p className="text-stone-600 font-body text-lg leading-relaxed mb-6">
             This is a guided path — not a blog. Each section builds on the last, starting with the fundamentals and moving toward long-term growth.
           </p>
-          <p className="text-stone-400 font-body text-sm italic">
-            No jargon. No sales pitch. Just clear, honest information.
-          </p>
+          <p className="text-stone-400 font-body text-sm italic">No jargon. No sales pitch. Just clear, honest information.</p>
         </div>
       </section>
 

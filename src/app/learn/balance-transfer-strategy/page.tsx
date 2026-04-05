@@ -1,4 +1,10 @@
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Balance Transfer Strategy: How to Reduce Interest and Pay Off Debt Faster',
+  description: 'Learn how balance transfer credit cards and 0% APR promotions can help reduce interest and accelerate debt payoff when used responsibly as part of a larger financial plan.',
+}
 
 const nextSteps = [
   { label: 'Take the Quiz', href: '/quiz', desc: 'See where you stand' },
@@ -79,18 +85,16 @@ export default function BalanceTransferStrategy() {
 
         <div className="bg-white border border-warm-sand rounded-2xl p-6">
           <p className="text-xs uppercase tracking-widest text-stone-400 mb-3 font-body">Balance Transfer Ladder Strategy</p>
-          <p className="font-body text-stone-600 text-sm leading-relaxed mb-4">Some people use multiple balance transfer cards over time — moving a balance to a 0% card, paying it down during the promotional period, then transferring any remaining balance to another promotional card. This can reduce interest over a longer period.</p>
-          <p className="text-xs font-body text-stone-400 italic">This requires good organization, attention to deadlines, and avoiding new spending on the cards.</p>
+          <p className="font-body text-stone-600 text-sm leading-relaxed mb-4">Some people use multiple balance transfer cards over time — moving a balance to a 0% card, paying it down during the promotional period, then transferring any remaining balance to another promotional card. This can reduce interest over a longer period but requires good organization, attention to deadlines, and avoiding new spending on the cards.</p>
         </div>
       </section>
 
-      {/* ── SIMPLE EXAMPLE ── */}
+      {/* ── WARNINGS ── */}
       <section className="py-16 bg-stone-800 text-warm-cream">
         <div className="max-w-3xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-[0.2em] text-stone-400 mb-4 font-body">Simple Example</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-stone-400 mb-4 font-body">Important Warnings</p>
           <h2 className="font-display text-3xl font-bold mb-6">This strategy can backfire — here is when.</h2>
           <p className="text-stone-400 font-body leading-relaxed mb-8">Balance transfer strategies work best when they are part of a larger plan. They can backfire if spending habits do not change.</p>
-
           <div className="grid sm:grid-cols-2 gap-3 mb-8">
             {[
               'New purchases added to the card',
@@ -105,7 +109,6 @@ export default function BalanceTransferStrategy() {
               </div>
             ))}
           </div>
-
           <div className="bg-stone-700 rounded-2xl p-6">
             <p className="text-xs uppercase tracking-widest text-stone-400 mb-3 font-body">A balance transfer is a tool, not a solution</p>
             <p className="font-body text-stone-300 text-sm leading-relaxed">Debt goes away through consistent payments, budgeting, reducing expenses, increasing income, and time. The balance transfer just reduces how much interest slows you down.</p>
