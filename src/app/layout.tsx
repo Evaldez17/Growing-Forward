@@ -6,19 +6,31 @@ import Footer from '@/components/Footer'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-display',
+  variable: '--font-playfair',
   display: 'swap',
 })
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-body',
+  variable: '--font-dm-sans',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Growing Forward | Mindset. Creativity. Protection.',
-  description: 'A trust-first financial education resource. No pressure. No jargon. Just honest conversations about protecting your people and growing forward.',
+  metadataBase: new URL('https://www.growingforwardco.com'),
+  title: {
+    default: 'Growing Forward Co | Financial Education & Life Insurance',
+    template: '%s | Growing Forward Co',
+  },
+  description: 'Growing Forward Co helps people build financial clarity, protect their income, and make confident decisions about their financial future.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    siteName: 'Growing Forward Co',
+    url: 'https://www.growingforwardco.com',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
