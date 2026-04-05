@@ -60,32 +60,64 @@ export default function BalanceTransferStrategy() {
         </div>
       </section>
 
-      {/* ── WHY IT MATTERS ── */}
+      {/* ── CREDIT LIMIT CONSIDERATIONS ── */}
       <section className="py-16 max-w-3xl mx-auto px-6">
-        <p className="text-xs uppercase tracking-[0.2em] text-blue-600 mb-4 font-body">Why It Matters</p>
-        <h2 className="font-display text-3xl font-bold text-stone-800 mb-6">The goal of the strategy.</h2>
-        <div className="space-y-3 mb-10">
-          {[
-            'Reduce interest charges',
-            'Increase the portion of your payment going to principal',
-            'Pay down balances faster',
-            'Avoid adding new debt',
-            'Use promotional periods wisely',
-          ].map(item => (
-            <div key={item} className="flex items-center gap-3 bg-blue-50 border border-blue-200 rounded-xl px-4 py-3">
-              <span className="w-5 h-5 rounded-full bg-blue-100 border border-blue-200 flex items-center justify-center flex-shrink-0">
-                <svg className="w-3 h-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                </svg>
-              </span>
-              <span className="font-body text-sm text-stone-700">{item}</span>
-            </div>
-          ))}
+        <p className="text-xs uppercase tracking-[0.2em] text-blue-600 mb-4 font-body">Credit Limit Considerations</p>
+        <h2 className="font-display text-3xl font-bold text-stone-800 mb-6">You may not be able to transfer everything at once.</h2>
+        <p className="text-stone-600 font-body leading-relaxed mb-6">The new card may not approve you for a high enough credit limit to move all of your debt at once. For example, if you have $10,000 in credit card debt, a new balance transfer card might only approve you for a $4,000 or $5,000 limit. That means you may only be able to transfer part of the balance, not the entire amount.</p>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 mb-6">
+          <p className="text-xs uppercase tracking-widest text-blue-600 mb-4 font-body">Some people handle this by</p>
+          <ul className="space-y-3">
+            {[
+              'Transferring part of the balance to the new card',
+              'Continuing to pay the remaining balance on the original card',
+              'Paying down the transferred balance as quickly as possible',
+              'Applying for another transfer card later if needed',
+              'Repeating the process over time',
+            ].map(item => (
+              <li key={item} className="flex items-start gap-3 font-body text-sm text-stone-700">
+                <span className="w-5 h-5 rounded-full bg-blue-100 border border-blue-200 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg className="w-3 h-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="bg-white border border-warm-sand rounded-2xl p-6">
           <p className="text-xs uppercase tracking-widest text-stone-400 mb-3 font-body">Balance Transfer Ladder Strategy</p>
-          <p className="font-body text-stone-600 text-sm leading-relaxed mb-4">Some people use multiple balance transfer cards over time — moving a balance to a 0% card, paying it down during the promotional period, then transferring any remaining balance to another promotional card. This can reduce interest over a longer period but requires good organization, attention to deadlines, and avoiding new spending on the cards.</p>
+          <p className="font-body text-stone-600 text-sm leading-relaxed mb-3">This is sometimes called a balance transfer ladder strategy. It requires organization and discipline, but it can help reduce interest over time if used carefully.</p>
+          <p className="font-body text-stone-500 text-sm italic">The important thing is to make sure total debt is going down over time — not just moving around.</p>
+        </div>
+      </section>
+
+      {/* ── WHY IT MATTERS ── */}
+      <section className="py-16 bg-warm-sand/40">
+        <div className="max-w-3xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-[0.2em] text-blue-600 mb-4 font-body">Why It Matters</p>
+          <h2 className="font-display text-3xl font-bold text-stone-800 mb-6">The goal of the strategy.</h2>
+          <div className="space-y-3">
+            {[
+              'Reduce interest charges',
+              'Increase the portion of your payment going to principal',
+              'Pay down balances faster',
+              'Avoid adding new debt',
+              'Use promotional periods wisely',
+            ].map(item => (
+              <div key={item} className="flex items-center gap-3 bg-white border border-blue-200 rounded-xl px-4 py-3">
+                <span className="w-5 h-5 rounded-full bg-blue-100 border border-blue-200 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-3 h-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <span className="font-body text-sm text-stone-700">{item}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -95,7 +127,7 @@ export default function BalanceTransferStrategy() {
           <p className="text-xs uppercase tracking-[0.2em] text-stone-400 mb-4 font-body">Important Warnings</p>
           <h2 className="font-display text-3xl font-bold mb-6">This strategy can backfire — here is when.</h2>
           <p className="text-stone-400 font-body leading-relaxed mb-8">Balance transfer strategies work best when they are part of a larger plan. They can backfire if spending habits do not change.</p>
-          <div className="grid sm:grid-cols-2 gap-3 mb-8">
+          <div className="grid sm:grid-cols-2 gap-3 mb-10">
             {[
               'New purchases added to the card',
               'Payments are missed',
@@ -109,6 +141,27 @@ export default function BalanceTransferStrategy() {
               </div>
             ))}
           </div>
+
+          {/* Credit Score Warning */}
+          <div className="bg-stone-700 rounded-2xl p-6 mb-6">
+            <p className="text-xs uppercase tracking-widest text-stone-400 mb-3 font-body">Utilization and Credit Score</p>
+            <p className="font-body text-stone-300 text-sm leading-relaxed mb-4">Opening new cards and moving balances can temporarily affect your credit score. High credit utilization — using a large percentage of your available credit — can also affect your score. However, as balances are paid down and utilization decreases, credit scores often recover over time.</p>
+            <ul className="space-y-2">
+              {[
+                'Make all payments on time',
+                'Avoid maxing out cards if possible',
+                'Avoid applying for too many cards at once',
+                'Focus on reducing total balances over time',
+              ].map(item => (
+                <li key={item} className="flex items-center gap-2 font-body text-sm text-stone-300">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-stone-400 font-body text-xs italic">The goal is to use credit strategically, not rely on it long-term.</p>
+          </div>
+
           <div className="bg-stone-700 rounded-2xl p-6">
             <p className="text-xs uppercase tracking-widest text-stone-400 mb-3 font-body">A balance transfer is a tool, not a solution</p>
             <p className="font-body text-stone-300 text-sm leading-relaxed">Debt goes away through consistent payments, budgeting, reducing expenses, increasing income, and time. The balance transfer just reduces how much interest slows you down.</p>
