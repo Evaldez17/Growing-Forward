@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'financial-foundation',
     'how-money-works',
     'cost-of-waiting',
+    'rule-of-72',
     'compound-interest',
     'inflation',
     'why-life-insurance',
@@ -30,8 +31,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'emergency-fund',
     'budgeting-basics',
     'debt-payoff-strategies',
-    'paying-yourself-first',
     'balance-transfer-strategy',
+    'debt-consolidation',
+    'paying-yourself-first',
     'investing-basics',
     'retirement-basics',
     'financial-independence',
@@ -42,10 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
   }))
 
-  return [
-    ...staticRoutes,
-    ...learnRoutes,
-  ].map(route => ({
+  return [...staticRoutes, ...learnRoutes].map(route => ({
     ...route,
     lastModified: new Date(),
   }))

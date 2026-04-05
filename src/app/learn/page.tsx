@@ -1,4 +1,10 @@
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Learn | Growing Forward Co — Financial Education Hub',
+  description: 'A guided financial education path covering Foundation, Protection, Building Stability, and Growing Wealth. Learn the basics and build from there.',
+}
 
 const sections = [
   {
@@ -13,7 +19,7 @@ const sections = [
       { title: 'Building Your Financial Foundation', href: '/learn/financial-foundation', ready: true },
       { title: 'How Money Works', href: '/learn/how-money-works', ready: true },
       { title: 'The Cost of Waiting', href: '/learn/cost-of-waiting', ready: true },
-      { title: 'Rule of 72', href: '/learn/rule-of-72', ready: false },
+      { title: 'Rule of 72', href: '/learn/rule-of-72', ready: true },
       { title: 'Compound Interest', href: '/learn/compound-interest', ready: true },
       { title: 'Inflation', href: '/learn/inflation', ready: true },
     ],
@@ -45,8 +51,9 @@ const sections = [
       { title: 'Emergency Fund', href: '/learn/emergency-fund', ready: true },
       { title: 'Budgeting Basics', href: '/learn/budgeting-basics', ready: true },
       { title: 'Debt Payoff Strategies', href: '/learn/debt-payoff-strategies', ready: true },
-      { title: 'Paying Yourself First', href: '/learn/paying-yourself-first', ready: true },
       { title: 'Balance Transfer Strategy', href: '/learn/balance-transfer-strategy', ready: true },
+      { title: 'Debt Consolidation', href: '/learn/debt-consolidation', ready: true },
+      { title: 'Paying Yourself First', href: '/learn/paying-yourself-first', ready: true },
     ],
   },
   {
